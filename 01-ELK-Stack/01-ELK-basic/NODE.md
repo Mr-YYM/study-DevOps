@@ -9,7 +9,7 @@
   - central place help us with log analysis. This is what ELK Stack do. 
 - **Log Analysis is the Process of analyzing the computer/ machine generated data.**    
 
-![](/Users/yanyeming/Desktop/study-DevOps/01-ELK-Stack/01-ELK-basic/assets/01-what-is-log-analysis.png)
+![](https://raw.githubusercontent.com/Mr-YYM/study-DevOps/master/01-ELK-Stack/01-ELK-basic/assets/01-what-is-log-analysis.png)
 
 -  log always unstructured form. 
 
@@ -31,7 +31,7 @@
 
 - Non-consistent log format
 
-![](/Users/yanyeming/Desktop/study-DevOps/01-ELK-Stack/01-ELK-basic/assets/02-Non-consistent-log-format.png)
+![](https://raw.githubusercontent.com/Mr-YYM/study-DevOps/master/01-ELK-Stack/01-ELK-basic/assets/02-Non-consistent-log-format.png)
 
 - Non-consistent time format
 - Decentralized logs
