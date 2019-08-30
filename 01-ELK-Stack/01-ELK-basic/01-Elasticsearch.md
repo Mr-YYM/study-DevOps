@@ -24,8 +24,25 @@
 
 
   > 1. 在root权限下，useradd只是创建了一个用户名，如（`useradd + 用户名 `），它并没有在`/home`目录下创建同名文件夹，也没有创建密码，因此利用这个用户登录系统，是登录不了的，为了避免这样的情况出现，可以用 （`useradd -m +用户名`）的方式创建，它会在`/home`目录下创建同名文件夹，然后利用（ `passwd + 用户名`）为指定的用户名设置密码。
-  >
-  > 2. 可以直接利用adduser创建新用户（`adduser +用户名`）这样在/home目录下会自动创建同名文件夹  
+  >2. 可以直接利用adduser创建新用户（`adduser +用户名`）这样在/home目录下会自动创建同名文件夹  
+
+- 给新用户分配 sudo 使用权限
+
+  ```shell
+  chmod +w /etc/sudoers
+  vim /etc/sudoers
+  
+  # root    ALL=(ALL)       ALL 下面添加一行：
+  [username]      ALL=(ALL)       ALL
+  
+  chmod -w /etc/sudoers
+  ```
+
+- 添加用户到 root 组
+
+  ```shell
+  usermod -a -G root [username]
+  ```
 
 - 切换用户
 
@@ -43,11 +60,12 @@
     最新版本下载：https://www.elastic.co/cn/downloads/elasticsearch
 
     ```shell
+    # 新用户下下载
     curl -L -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.3.0-linux-x86_64.tar.gz # 当然也可以用 wget 下载
-    ```
-
-  - 解压缩安装包
-
+  ```
+  
+- 解压缩安装包
+  
     ```sh
     tar -xvf elasticsearch-7.3.0-linux-x86_64.tar.gz
     ```
@@ -124,10 +142,11 @@
   cluster.initial_master_nodes: ["node-1"]
   ```
 
-- 放行 9200 端口
+- 放行 9200 9300 端口
 
   ```shell
   firewall-cmd --add-port=9200/tcp --permanent
+  firewall-cmd --add-port=9300/tcp --permanent
   firewall-cmd --reload
   ```
 
