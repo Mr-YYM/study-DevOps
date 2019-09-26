@@ -1,0 +1,7 @@
+- hosts: sunsea
+  tasks:
+    - name: Ensure SELinux is set to enforcing mode
+      lineinfile:
+        path: /root/.oh-my-zsh/themes/robbyrussell.zsh-theme
+        regexp: '^PROMPT\+='
+        line: PROMPT+=' %{$fg[cyan]%}$USER@sunsea %c%{$reset_color%} $(git_prompt_info)'

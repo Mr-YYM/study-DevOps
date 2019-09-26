@@ -1,0 +1,3 @@
+# Test ansible lineinfile module
+TESTLINE=GOOD
+NOTESTLINE=NICE

@@ -1,0 +1,10 @@
+- hosts: sunsea
+  tasks:
+    - name: install requirement
+      yum:
+        name: 
+          - wget
+          - git
+          - zsh
+          - net-tools 
+        state: present

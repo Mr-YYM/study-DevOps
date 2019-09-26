@@ -1,0 +1,6 @@
+- hosts: sunsea
+  tasks:
+    - name: Copy file to remote
+      copy:
+        src: /Users/yanyeming/ansible_ELK/test_ansible2.txt
+        dest: /root/test_ansible2.txt

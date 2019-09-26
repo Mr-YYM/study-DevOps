@@ -1,0 +1,11 @@
+- hosts: sunsea
+  tasks:
+    - name: Download cheat
+      git:
+        repo: 'https://github.com/chrisallenlane/cheat.git'
+        dest: /root/cheat/
+
+    - name: install cheat
+      shell: python setup.py install
+      args:
+        chdir: /root/cheat/
