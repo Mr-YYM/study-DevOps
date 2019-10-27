@@ -62,6 +62,9 @@
     ```shell
     # 新用户下下载
     curl -L -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.3.0-linux-x86_64.tar.gz # 当然也可以用 wget 下载
+    ```
+  ```
+  
   ```
   
 - 解压缩安装包

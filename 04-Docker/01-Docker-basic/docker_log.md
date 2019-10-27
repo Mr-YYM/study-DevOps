@@ -42,6 +42,20 @@
   sudo docker run hello-world
   ```
 
+## Docker 基础命令
+
+### create start run 的区别
+
+> **Create** adds a writeable container on top of your image and sets it up for running whatever command you specified in your `CMD`. The container ID is reported back but it’s not started.
+>
+> **Start** will start any stopped containers. This includes freshly created containers.
+>
+> **Run** is a combination of create and start. It creates the container and starts it.
+
+- `create`是创建新的容器
+- `start` 启动一个停止的容器包括刚刚`create`的容器
+- `run`包括了`create`与`start`
+
 ## Docker 常用命令一览
 
 ```shell

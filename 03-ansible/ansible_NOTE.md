@@ -21,6 +21,10 @@ sunsea2
 sunsea3
 ```
 
+## playbook 使用
+
+`ansible-playbook xxx.yml`
+
 ## 各模块使用说明
 
 ### shell
@@ -52,6 +56,16 @@ sunsea3
 ```
 
 ### lineinfile
+
+https://hoxis.github.io/ansible-files-modules-lineinfile.html
+
+删除行 state=absent
+
+
+```shell
+# 文件末尾追加一行
+ansible sunsea -m lineinfile -a "dest=/etc/vimrc state=present line='set nu'"
+```
 
 ```yaml
 # playbook 示例
