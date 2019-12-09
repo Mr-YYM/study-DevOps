@@ -14,7 +14,7 @@
 - Prometheus 组件
   - **Prometheus server** —— 数据采集和存储，提供PromQL查询语言的支持。
   - **exporters** ——收集指标，暴露 API（ /metrics ） 供 Prometheus Server Pull
-  - ** alert manager** —— 处理告警
+  - **alert manager** —— 处理告警
   - Client SDK —— 官方类库 Java Python Go Ruby
   - Push Gateway —— 中间网关for supporting short-lived jobs
   - 组件架构图：：

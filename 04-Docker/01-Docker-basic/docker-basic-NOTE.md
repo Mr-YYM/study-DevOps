@@ -1,6 +1,14 @@
 # Docker 基础
 
+###  一、环境配置的难题
 
+> 软件开发最大的麻烦事之一，就是环境配置。用户计算机的环境都不相同，你怎么知道自家的软件，能在那些机器跑起来？
+>
+> 用户必须保证两件事：操作系统的设置，各种库和组件的安装。只有它们都正确，软件才能运行。举例来说，安装一个 Python 应用，计算机必须有 Python 引擎，还必须有各种依赖，可能还要配置环境变量。
+>
+> 如果某些老旧的模块与当前环境不兼容，那就麻烦了。开发者常常会说："它在我的机器可以跑了"（It works on my machine），言下之意就是，其他机器很可能跑不了。
+>
+> 环境配置如此麻烦，换一台机器，就要重来一次，旷日费时。很多人想到，能不能从根本上解决问题，软件可以带环境安装？也就是说，安装的时候，把原始环境一模一样地复制过来。
 
 ## 什么是 docker
 
@@ -34,6 +42,7 @@
 
   ```shell
   sudo systemctl start docker
+  sudo systemctl enable docker
   ```
 
 - 确认 Docker 成功安装，并能够运行
@@ -134,7 +143,27 @@ CMD ["python", "app.py"]
 ```
 
 
+## 最佳实践
+
+### 修改容器数据的默认存放位置
+
+参考：https://stackoverflow.com/questions/36014554/how-to-change-the-default-location-for-docker-create-volume-command
+
+- 修改 `/lib/systemd/system/docker.service` 文件中 `Service` 项中的 `ExecStart` ，在命令后添加参数 `--data-root=[自定义的目录] `即可
+
+  ```ini
+  # vim /lib/systemd/system/docker.service
+  [Service]
+  ...
+  ExecStart=/usr/bin/dockerd --data-root=/docker_data -H fd:// --containerd=/run/containerd/containerd.sock
+  ...
+  ```
+
+- 重启 docker
+- 建议第一次安装就要设置，更改后数据会消失
 
 ## 参考资料
 
 1. [Get Docker engine](https://docs.docker.com/install/linux/docker-ce/centos/)
+2. [ 阮一峰 Docker 入门](http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html)
+
