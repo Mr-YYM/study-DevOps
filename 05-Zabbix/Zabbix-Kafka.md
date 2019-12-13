@@ -1,5 +1,7 @@
 # Zabbix 监控 Kafka
 
+reference：https://www.jianshu.com/p/c56e60d35b35
+
 ## 创建 Zookeeper 与 Kafka 容器
 
 ```yml
@@ -57,4 +59,17 @@ fi
   docker network connect kafka-test zabbix-JavaGateway --alias zabbix-JavaGateway
   ```
 
+## 配置模板
+
+- 下载模板文件 https://raw.githubusercontent.com/helli0n/kafka-monitoring/master/zbx_kafka_templates.xml
+
+- 导入模板
+
+  <img src="/Users/yanyeming/Desktop/study-DevOps/05-Zabbix/assets/06-template02.png" alt="06-template02" style="zoom: 50%;" />
+
   
+
+- 给需要监控的主机添加相关模板
+
+  <img src="/Users/yanyeming/Desktop/study-DevOps/05-Zabbix/assets/06-add-template-to-host.png" alt="06-add-template-to-host" style="zoom: 33%;" />
+
