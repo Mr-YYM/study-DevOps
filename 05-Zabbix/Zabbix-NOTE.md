@@ -209,7 +209,7 @@ docker network create zabbix
 - 执行以下命令
 
   ```shell
-docker volume create zabbix-mysql
+  docker volume create zabbix-mysql
   docker network create zabbix
   docker-compose up -d
   ```
