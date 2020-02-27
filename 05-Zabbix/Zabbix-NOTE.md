@@ -239,13 +239,13 @@ docker volume create zabbix-mysql
     ```shell
     rpm -Uvh https://repo.zabbix.com/zabbix/4.4/rhel/6/x86_64/zabbix-release-4.4-1.el6.noarch.rpm
     ```
-```
+
 - 安装与配置被监控主机的`agent`
   - 安装 agent
 
     ```shell
     yum install -y zabbix-agent
-```
+    ```
 
   - agent 配置 `vim /etc/zabbix/zabbix_agentd.conf`
 
