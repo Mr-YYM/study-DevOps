@@ -75,6 +75,8 @@ docker network create zabbix
 
 ### Zabbix Server 组件安装
 
+https://hub.docker.com/u/zabbixmultiarch  arm架构CPU请从这里pull镜像
+
 - 启动 Zabbix Java Gateway 实例
 
   ```shell
