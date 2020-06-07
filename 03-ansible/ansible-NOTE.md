@@ -10,6 +10,12 @@
 
 Ansible 能够同时操控多台机器。这些机器记录在 Inventory（清单） 上，清单的默认文件是 `/etc/ansible/hosts` 我们也可以通过 `-i` 参数指定另外的清单文件。
 
+## 安装
+
+https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html
+
+yum install ansible
+
 ### 配置示例
 
 ```ini
@@ -20,6 +26,8 @@ sunsea1
 sunsea2
 sunsea3
 ```
+
+ssh 变量的配置 https://serverfault.com/questions/628989/how-to-set-default-ansible-username-password-for-ssh-connection
 
 ## playbook 使用
 
