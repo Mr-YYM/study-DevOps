@@ -29,6 +29,7 @@ ENTRYPOINT ["python", "manage.py", "runserver"]
 
 **多阶段构建 Dockerfile：**
 ```Dockerfile
+# 第一阶段的 FROM 加一个 as 
 FROM alpine:3.12 as builder
 WORKDIR /app
 
@@ -45,6 +46,7 @@ FROM python:3.8.3-alpine3.12
 WORKDIR /app
 
 COPY . /app
+# --from 把第一阶段构建的依赖移过来
 COPY --from=builder /usr/lib/python3.8/site-packages /usr/local/lib/python3.8/site-packages
 COPY --from=builder /usr/lib/libmysqlclient* /usr/local/lib/
 
