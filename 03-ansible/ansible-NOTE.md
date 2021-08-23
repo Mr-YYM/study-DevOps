@@ -29,6 +29,17 @@ sunsea3
 
 ssh 变量的配置 https://serverfault.com/questions/628989/how-to-set-default-ansible-username-password-for-ssh-connection
 
+跳过 ssh figureprint 验证:
+
+https://stackoverflow.com/questions/32297456/how-to-ignore-ansible-ssh-authenticity-checking
+
+在 `/etc/ansible/ansible.cfg` 文件修改配置
+
+```ini
+[defaults]
+host_key_checking = False
+```
+
 ## playbook 使用
 
 `ansible-playbook xxx.yml`
